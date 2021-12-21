@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "type": "remote",
+      "configurationFolders": [
+        {
+          "folder": "unitTests",
+          "singleRunConfigurations": [
+            {
+              "name": "RUTests",
+              "typeName": "remote",
+              "folderName": "unitTests"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": []
+    }
+  ]
+}

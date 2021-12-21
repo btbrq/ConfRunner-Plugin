@@ -1,0 +1,66 @@
+{
+  "configurations": [
+    {
+      "type": "junit",
+      "configurationFolders": [
+        {
+          "folder": "test-dir",
+          "singleRunConfigurations": [
+            {
+              "name": "u6",
+              "typeName": "junit",
+              "folderName": "test-dir"
+            }
+          ]
+        },
+        {
+          "folder": "unit",
+          "singleRunConfigurations": [
+            {
+              "name": "u4",
+              "typeName": "junit",
+              "folderName": "unit"
+            },
+            {
+              "name": "u5",
+              "typeName": "junit",
+              "folderName": "unit"
+            }
+          ]
+        },
+        {
+          "folder": "integration",
+          "singleRunConfigurations": [
+            {
+              "name": "u1",
+              "typeName": "junit",
+              "folderName": "integration"
+            },
+            {
+              "name": "u2",
+              "typeName": "junit",
+              "folderName": "integration"
+            },
+            {
+              "name": "u3",
+              "typeName": "junit",
+              "folderName": "integration"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": [
+        {
+          "name": "u1",
+          "typeName": "junit",
+          "folderName": null
+        },
+        {
+          "name": "u2",
+          "typeName": "junit",
+          "folderName": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "type": "junit",
+      "configurationFolders": [
+        {
+          "folder": "integration",
+          "singleRunConfigurations": [
+            {
+              "name": "u1",
+              "typeName": "junit",
+              "folderName": "integration"
+            },
+            {
+              "name": "u2",
+              "typeName": "junit",
+              "folderName": "integration"
+            },
+            {
+              "name": "u3",
+              "typeName": "junit",
+              "folderName": "integration"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": []
+    }
+  ]
+}

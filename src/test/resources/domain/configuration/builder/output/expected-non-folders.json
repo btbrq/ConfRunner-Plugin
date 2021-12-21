@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "type": "junit",
+      "configurationFolders": [],
+      "nonFolderedRunConfigurations": [
+        {
+          "name": "u1",
+          "typeName": "junit",
+          "folderName": null
+        },
+        {
+          "name": "u2",
+          "typeName": "junit",
+          "folderName": null
+        }
+      ]
+    },
+    {
+      "type": "remote",
+      "configurationFolders": [],
+      "nonFolderedRunConfigurations": [
+        {
+          "name": "r1",
+          "typeName": "remote",
+          "folderName": null
+        }
+      ]
+    }
+  ]
+}

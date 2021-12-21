@@ -1,0 +1,52 @@
+{
+  "configurations": [
+    {
+      "type": "Android JUnit",
+      "configurationFolders": [
+        {
+          "folder": "New Folder",
+          "singleRunConfigurations": [
+            {
+              "name": "dasdasds",
+              "typeName": "Android JUnit",
+              "folderName": "New Folder"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": []
+    },
+    {
+      "type": "remote",
+      "configurationFolders": [
+        {
+          "folder": "unitTests",
+          "singleRunConfigurations": [
+            {
+              "name": "RUTests",
+              "typeName": "remote",
+              "folderName": "unitTests"
+            },
+            {
+              "name": "RemoteUnitTests",
+              "typeName": "remote",
+              "folderName": "unitTests"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": [
+        {
+          "name": "RmUmTmAAA",
+          "typeName": "remote",
+          "folderName": null
+        },
+        {
+          "name": "RmUmTEST",
+          "typeName": "remote",
+          "folderName": null
+        }
+      ]
+    }
+  ]
+}

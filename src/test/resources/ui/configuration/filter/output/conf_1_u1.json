@@ -1,0 +1,58 @@
+{
+  "configurations": [
+    {
+      "type": "junit",
+      "configurationFolders": [
+        {
+          "folder": "integration",
+          "singleRunConfigurations": [
+            {
+              "name": "u1",
+              "typeName": "junit",
+              "folderName": "integration"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": [
+        {
+          "name": "u1",
+          "typeName": "junit",
+          "folderName": null
+        }
+      ]
+    },
+    {
+      "type": "remote",
+      "configurationFolders": [
+        {
+          "folder": "unit",
+          "singleRunConfigurations": [
+            {
+              "name": "u1",
+              "typeName": "remote",
+              "folderName": "unit"
+            }
+          ]
+        },
+        {
+          "folder": "remote-dir",
+          "singleRunConfigurations": [
+            {
+              "name": "u1",
+              "typeName": "remote",
+              "folderName": "remote-dir"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": [
+        {
+          "name": "u1",
+          "typeName": "remote",
+          "folderName": null
+        }
+      ]
+    }
+  ]
+}

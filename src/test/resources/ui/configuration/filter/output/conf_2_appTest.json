@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "type": "Gradle",
+      "configurationFolders": [
+        {
+          "folder": "test:Build",
+          "singleRunConfigurations": [
+            {
+              "name": "appF1:buildTest",
+              "typeName": "Gradle",
+              "folderName": "test:Build"
+            },
+            {
+              "name": "appF2:buildTest",
+              "typeName": "Gradle",
+              "folderName": "test:Build"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": []
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "configurations": [
+    {
+      "type": "Android JUnit",
+      "configurationFolders": [
+        {
+          "folder": "New Folder",
+          "singleRunConfigurations": [
+            {
+              "name": "dasdasds",
+              "typeName": "Android JUnit",
+              "folderName": "New Folder"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": []
+    },
+    {
+      "type": "Gradle",
+      "configurationFolders": [
+        {
+          "folder": "test:Build",
+          "singleRunConfigurations": [
+            {
+              "name": "appF1:buildTest",
+              "typeName": "Gradle",
+              "folderName": "test:Build"
+            },
+            {
+              "name": "appF2:buildTest",
+              "typeName": "Gradle",
+              "folderName": "test:Build"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": []
+    },
+    {
+      "type": "remote",
+      "configurationFolders": [
+        {
+          "folder": "testDirectory",
+          "singleRunConfigurations": [
+            {
+              "name": "remoteTestDebug",
+              "typeName": "remote",
+              "folderName": "testDirectory"
+            },
+            {
+              "name": "remoteTestDebug2",
+              "typeName": "remote",
+              "folderName": "testDirectory"
+            }
+          ]
+        },
+        {
+          "folder": "unitTests",
+          "singleRunConfigurations": [
+            {
+              "name": "RUTests",
+              "typeName": "remote",
+              "folderName": "unitTests"
+            },
+            {
+              "name": "RemoteUnitTests",
+              "typeName": "remote",
+              "folderName": "unitTests"
+            }
+          ]
+        }
+      ],
+      "nonFolderedRunConfigurations": [
+        {
+          "name": "RmUmTmAAA",
+          "typeName": "remote",
+          "folderName": null
+        },
+        {
+          "name": "RmUmTEST",
+          "typeName": "remote",
+          "folderName": null
+        }
+      ]
+    }
+  ]
+}

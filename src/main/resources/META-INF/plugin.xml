@@ -1,0 +1,54 @@
+<idea-plugin>
+    <id>brq.intellij.plugins.confrunner</id>
+    <name>ConfRunner</name>
+    <vendor url="https://github.com/btbrq">Bartosz Turek</vendor>
+    <description><![CDATA[
+    ConfRunner Plugin is a plugin for JetBrains IntelliJ IDEA, that can be used to simplify execution of configurations in run and debug mode.
+    <br><br>
+    Enables an easy way of executing configurations using keyboard shortcuts.
+    <br><br>
+    It displays simplified popup dialog with defined configurations and enables to go through configurations and execute a specific one. Open the dialog using either Tools tab (Tools > ConfRunner) or using a shortcut.
+    <br><br>
+    You can specify which configuration types should be excluded from the dialog (Settings > Tools > ConfRunner):
+    <br>
+    <ul>
+        <li>
+            Exclude temporary configurations
+        </li>
+        <li>
+            Exclude configurations stored in .idea/runConfigurations folder
+        </li>
+        <li>
+            Exclude configurations stored in arbitrary file in project
+        </li>
+        <li>
+            Exclude local configurations, not shared through VCS
+        </li>
+    </ul>
+    <br>
+    More info: <a href="https://github.com/btbrq/ConfRunner-Plugin">ConfRunner Plugin</a>
+    ]]></description>
+
+    <idea-version since-build="203"/>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action description="AppDialogAction" text="ConfRunner"
+                class="brq.intellij.plugins.confrunner.dialog.AppDialogAction"
+                id="brq.intellij.plugins.confrunner.dialog.AppDialogAction">
+            <add-to-group anchor="first" group-id="ToolsMenu"/>
+            <keyboard-shortcut first-keystroke="ctrl alt SLASH" keymap="$default"/>
+        </action>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable parentId="tools"
+                                 instance="brq.intellij.plugins.confrunner.settings.Configurable"
+                                 id="brq.intellij.plugins.confrunner.settings.Configurable"
+                                 displayName="ConfRunner"/>
+        <applicationService
+                serviceImplementation="brq.intellij.plugins.confrunner.settings.Settings"/>
+    </extensions>
+
+</idea-plugin>
