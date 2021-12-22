@@ -9,6 +9,9 @@ Enables an easy way of executing configurations using keyboard shortcuts.
 It displays simplified popup dialog with defined configurations and enables to go through configurations and execute a
 specific one. Open the dialog using either Tools tab (Tools > ConfRunner) or using a shortcut.
 
+### Installation
+[https://plugins.jetbrains.com/plugin/18230-confrunner](https://plugins.jetbrains.com/plugin/18230-confrunner)
+
 ### Settings
 
 You can specify which configuration types should be excluded from the dialog
