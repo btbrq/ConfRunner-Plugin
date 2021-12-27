@@ -14,11 +14,9 @@ import static brq.intellij.plugins.confrunner.ui.JPanelConfigurationLabel.create
 
 public class JPanelSingleConfiguration extends BaseConfigurationPanel {
     private final RunnerAndConfigurationSettings executable;
-    private final JPanelConfigurationLabel label;
 
     private JPanelSingleConfiguration(JPanelConfigurationLabel label, int offset, RunnerAndConfigurationSettings executable) {
-        super(label.getLabelText());
-        this.label = label;
+        super(label);
         this.executable = executable;
         label.addFocusListener(new FocusListener(label));
         label.addMouseListener(new SingleRunConfigurationMouseClickListener(label, this));

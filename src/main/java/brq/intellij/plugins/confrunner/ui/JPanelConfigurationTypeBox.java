@@ -9,11 +9,9 @@ import javax.swing.*;
 
 public class JPanelConfigurationTypeBox extends BaseConfigurationPanel implements JPanelChildrenToggle {
     private JPanelConfigurationTypeFoldersAndSingleConfigurations foldersAndSingleConfigurations;
-    private JPanelConfigurationLabel label;
 
     private JPanelConfigurationTypeBox(JPanelConfigurationLabel label) {
-        super(label.getLabelText());
-        this.label = label;
+        super(label);
         label.addFocusListener(new FocusListener(label));
         label.addMouseListener(new MouseClickListener(this, label));
         label.addKeyListener(new ConfigurationTreeKeyNavigationListener(this));
@@ -31,9 +29,9 @@ public class JPanelConfigurationTypeBox extends BaseConfigurationPanel implement
         if (foldersAndSingleConfigurations != null) {
             foldersAndSingleConfigurations.setVisible(!foldersAndSingleConfigurations.isVisible());
             if (foldersAndSingleConfigurations.isVisible()) {
-                label.toggleExpanded();
+                getLabel().toggleExpanded();
             } else {
-                label.toggleCollapsed();
+                getLabel().toggleCollapsed();
             }
         }
     }

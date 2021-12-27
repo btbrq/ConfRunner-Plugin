@@ -28,6 +28,7 @@ public class JPanelConfigurationLabel extends JPanel {
         labelText = label;
         DimensionsUtil.setLabelDimensions(this);
         setFocusable(true);
+        setFocusTraversalKeysEnabled(false);
         setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
         setAlignmentX(Component.LEFT_ALIGNMENT);
 

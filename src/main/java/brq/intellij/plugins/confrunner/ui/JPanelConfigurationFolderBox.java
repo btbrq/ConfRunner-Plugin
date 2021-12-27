@@ -14,11 +14,9 @@ import static com.intellij.icons.AllIcons.Nodes.Folder;
 
 public class JPanelConfigurationFolderBox extends BaseConfigurationPanel implements JPanelChildrenToggle {
     private JPanelConfigurationFolderConfigurations configurations;
-    private JPanelConfigurationLabel label;
 
     private JPanelConfigurationFolderBox(JPanelConfigurationLabel label) {
-        super(label.getLabelText());
-        this.label = label;
+        super(label);
         label.addFocusListener(new FocusListener(label));
         label.addMouseListener(new MouseClickListener(this, label));
         label.addKeyListener(new ConfigurationTreeKeyNavigationListener(this));
@@ -37,9 +35,9 @@ public class JPanelConfigurationFolderBox extends BaseConfigurationPanel impleme
         if (configurations != null) {
             configurations.setVisible(!configurations.isVisible());
             if (configurations.isVisible()) {
-                label.toggleExpanded();
+                getLabel().toggleExpanded();
             } else {
-                label.toggleCollapsed();
+                getLabel().toggleCollapsed();
             }
         }
     }

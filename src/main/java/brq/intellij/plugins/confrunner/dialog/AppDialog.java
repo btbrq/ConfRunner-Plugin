@@ -20,6 +20,7 @@ public class AppDialog extends DialogWrapper {
     private final Project project;
     private JPanelConfigurationTree configurationTree;
     private ConfigurationsLookup configurationsLookup;
+    private JBConfigurationTreeScrollPane scrollPane;
 
     public AppDialog(@Nullable Project project) {
         super(true);
@@ -39,7 +40,7 @@ public class AppDialog extends DialogWrapper {
         configurationTree = JPanelConfigurationTreeBuilder.getJPanelConfigurationTree(instanceImpl, Settings.getInstance());
         configurationsLookup = ConfigurationsLookup.createLookup();
 
-        JBConfigurationTreeScrollPane scrollPane = JBConfigurationTreeScrollPane.createConfigurationTreeScrollPane(configurationTree);
+        scrollPane = JBConfigurationTreeScrollPane.createConfigurationTreeScrollPane(configurationTree);
 
         dialogPanel.add(configurationsLookup);
         dialogPanel.add(scrollPane);
@@ -65,5 +66,9 @@ public class AppDialog extends DialogWrapper {
 
     public ConfigurationsLookup getConfigurationsLookup() {
         return configurationsLookup;
+    }
+
+    public JBConfigurationTreeScrollPane getScrollPane() {
+        return scrollPane;
     }
 }
