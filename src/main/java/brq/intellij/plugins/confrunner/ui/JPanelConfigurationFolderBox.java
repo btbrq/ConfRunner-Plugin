@@ -2,14 +2,12 @@ package brq.intellij.plugins.confrunner.ui;
 
 import brq.intellij.plugins.confrunner.common.constants.Constants;
 import brq.intellij.plugins.confrunner.domain.SingleRunConfiguration;
-import brq.intellij.plugins.confrunner.listeners.ConfigurationTreeKeyNavigationListener;
-import brq.intellij.plugins.confrunner.listeners.MouseClickListener;
-import brq.intellij.plugins.confrunner.listeners.FocusListener;
 import com.intellij.util.ui.JBUI;
 
 import javax.swing.*;
 import java.util.List;
 
+import static brq.intellij.plugins.confrunner.listeners.ListenerRegisterUtils.registerFolderTypeListeners;
 import static com.intellij.icons.AllIcons.Nodes.Folder;
 
 public class JPanelConfigurationFolderBox extends BaseConfigurationPanel implements JPanelChildrenToggle {
@@ -17,9 +15,7 @@ public class JPanelConfigurationFolderBox extends BaseConfigurationPanel impleme
 
     private JPanelConfigurationFolderBox(JPanelConfigurationLabel label) {
         super(label);
-        label.addFocusListener(new FocusListener(label));
-        label.addMouseListener(new MouseClickListener(this, label));
-        label.addKeyListener(new ConfigurationTreeKeyNavigationListener(this));
+        registerFolderTypeListeners(this, label);
         label.setBorder(JBUI.Borders.emptyLeft(Constants.iconWidth));
         add(label);
     }

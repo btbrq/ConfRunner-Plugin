@@ -1,15 +1,13 @@
 package brq.intellij.plugins.confrunner.ui;
 
-import brq.intellij.plugins.confrunner.common.utils.DimensionsUtil;
-import brq.intellij.plugins.confrunner.listeners.SingleRunConfigurationMouseClickListener;
 import brq.intellij.plugins.confrunner.common.constants.Constants;
-import brq.intellij.plugins.confrunner.listeners.ConfigurationTreeKeyNavigationListener;
-import brq.intellij.plugins.confrunner.listeners.FocusListener;
+import brq.intellij.plugins.confrunner.common.utils.DimensionsUtil;
 import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.util.ui.JBUI;
 
 import javax.swing.*;
 
+import static brq.intellij.plugins.confrunner.listeners.ListenerRegisterUtils.registerSingleConfigurationListeners;
 import static brq.intellij.plugins.confrunner.ui.JPanelConfigurationLabel.createSingleConfigurationLabel;
 
 public class JPanelSingleConfiguration extends BaseConfigurationPanel {
@@ -18,10 +16,7 @@ public class JPanelSingleConfiguration extends BaseConfigurationPanel {
     private JPanelSingleConfiguration(JPanelConfigurationLabel label, int offset, RunnerAndConfigurationSettings executable) {
         super(label);
         this.executable = executable;
-        label.addFocusListener(new FocusListener(label));
-        label.addMouseListener(new SingleRunConfigurationMouseClickListener(label, this));
-        label.addKeyListener(new ConfigurationTreeKeyNavigationListener(this));
-
+        registerSingleConfigurationListeners(this, label);
         label.setBorder(JBUI.Borders.emptyLeft(offset));
         add(label);
     }

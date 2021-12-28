@@ -32,8 +32,6 @@ public class ConfigurationTreeKeyNavigationListener implements KeyListener {
         } else if (focusNextKeyStroke(e)) {
             DialogState.getInstance().scrollDown(configuration.getLabel());
             KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
-        } else if (goToLookupKeyStroke(e)) {
-            DialogState.getInstance().focusConfigurationsLookup();
         } else if (keyEquals(e, KeyEvent.VK_RIGHT, KeyEvent.VK_LEFT, KeyEvent.VK_ENTER)) {
             if (configuration instanceof JPanelChildrenToggle) {
                 toggle();
@@ -49,10 +47,6 @@ public class ConfigurationTreeKeyNavigationListener implements KeyListener {
 
     private boolean focusNextKeyStroke(KeyEvent e) {
         return keyEquals(e, KeyEvent.VK_DOWN, KeyEvent.VK_TAB);
-    }
-
-    private boolean goToLookupKeyStroke(KeyEvent e) {
-        return keyEquals(e, KeyEvent.VK_F) && e.isControlDown();
     }
 
     private void toggle() {
