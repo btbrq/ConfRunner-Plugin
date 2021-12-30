@@ -35,3 +35,7 @@ signPlugin {
         password = System.getenv("PRIVATE_KEY_PASSWORD")
     }
 }
+
+publishPlugin {
+    token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
+}
