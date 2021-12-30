@@ -1,22 +1,17 @@
 package brq.intellij.plugins.confrunner.ui;
 
 import brq.intellij.plugins.confrunner.domain.ConfigurationTypeFoldered;
-import brq.intellij.plugins.confrunner.listeners.ConfigurationTreeKeyNavigationListener;
-import brq.intellij.plugins.confrunner.listeners.MouseClickListener;
-import brq.intellij.plugins.confrunner.listeners.FocusListener;
 
 import javax.swing.*;
 
+import static brq.intellij.plugins.confrunner.listeners.ListenerRegisterUtils.registerFolderTypeListeners;
+
 public class JPanelConfigurationTypeBox extends BaseConfigurationPanel implements JPanelChildrenToggle {
     private JPanelConfigurationTypeFoldersAndSingleConfigurations foldersAndSingleConfigurations;
-    private JPanelConfigurationLabel label;
 
     private JPanelConfigurationTypeBox(JPanelConfigurationLabel label) {
-        super(label.getLabelText());
-        this.label = label;
-        label.addFocusListener(new FocusListener(label));
-        label.addMouseListener(new MouseClickListener(this, label));
-        label.addKeyListener(new ConfigurationTreeKeyNavigationListener(this));
+        super(label);
+        registerFolderTypeListeners(this, label);
         add(label);
     }
 
@@ -31,9 +26,9 @@ public class JPanelConfigurationTypeBox extends BaseConfigurationPanel implement
         if (foldersAndSingleConfigurations != null) {
             foldersAndSingleConfigurations.setVisible(!foldersAndSingleConfigurations.isVisible());
             if (foldersAndSingleConfigurations.isVisible()) {
-                label.toggleExpanded();
+                getLabel().toggleExpanded();
             } else {
-                label.toggleCollapsed();
+                getLabel().toggleCollapsed();
             }
         }
     }

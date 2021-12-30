@@ -14,6 +14,7 @@ public final class Constants {
     public static final int CONFIGURATION_ITEM_WIDTH = 400;
     public static final int TYPE_CHILDREN_OFFSET = 20;
     public static final int FOLDER_CHILDREN_OFFSET = 40;
+    public static final int CONFIGURATION_RUN_TYPE_UNSUPPORTED_DIALOG_MIN_HEIGHT = 50;
 
     public static Icon expandedIcon = (Icon) UIManager.get("Tree.expandedIcon");
     public static Icon collapsedIcon = (Icon) UIManager.get("Tree.collapsedIcon");

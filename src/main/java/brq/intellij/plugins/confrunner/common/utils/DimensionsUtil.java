@@ -24,6 +24,12 @@ public class DimensionsUtil {
         dialog.setPreferredSize(dimension(Constants.DIALOG_PREFERRED_WIDTH, Constants.DIALOG_PREFERRED_HEIGHT));
     }
 
+    public static void setConfigurationRunTypeUnsupportedDialogDimensions(JPanel dialog) {
+        dialog.setMinimumSize(dimension(Constants.DIALOG_MIN_WIDTH, Constants.CONFIGURATION_RUN_TYPE_UNSUPPORTED_DIALOG_MIN_HEIGHT));
+        dialog.setMaximumSize(dimension(desktopWidth(), desktopHeight()));
+        dialog.setPreferredSize(dimension(Constants.DIALOG_MIN_WIDTH, Constants.CONFIGURATION_RUN_TYPE_UNSUPPORTED_DIALOG_MIN_HEIGHT));
+    }
+
     private static Dimension dimension(int width, int height) {
         return new Dimension(width, height);
     }

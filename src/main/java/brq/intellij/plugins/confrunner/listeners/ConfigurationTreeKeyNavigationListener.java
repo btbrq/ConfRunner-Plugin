@@ -9,7 +9,8 @@ import brq.intellij.plugins.confrunner.ui.JPanelSingleConfiguration;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.stream.IntStream;
+
+import static brq.intellij.plugins.confrunner.common.utils.FocusUtil.keyEquals;
 
 public class ConfigurationTreeKeyNavigationListener implements KeyListener {
     private final BaseConfigurationPanel configuration;
@@ -25,12 +26,12 @@ public class ConfigurationTreeKeyNavigationListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (keyEquals(e, KeyEvent.VK_DOWN)) {
-            KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
-        } else if (keyEquals(e, KeyEvent.VK_UP)) {
+        if (focusPreviousKeyStroke(e)) {
+            DialogState.getInstance().scrollUp(configuration.getLabel());
             KeyboardFocusManager.getCurrentKeyboardFocusManager().focusPreviousComponent();
-        } else if (keyEquals(e, KeyEvent.VK_F) && e.isControlDown()) {
-            DialogState.getInstance().focusConfigurationsLookup();
+        } else if (focusNextKeyStroke(e)) {
+            DialogState.getInstance().scrollDown(configuration.getLabel());
+            KeyboardFocusManager.getCurrentKeyboardFocusManager().focusNextComponent();
         } else if (keyEquals(e, KeyEvent.VK_RIGHT, KeyEvent.VK_LEFT, KeyEvent.VK_ENTER)) {
             if (configuration instanceof JPanelChildrenToggle) {
                 toggle();
@@ -38,6 +39,14 @@ public class ConfigurationTreeKeyNavigationListener implements KeyListener {
                 runConfiguration(e);
             }
         }
+    }
+
+    private boolean focusPreviousKeyStroke(KeyEvent e) {
+        return keyEquals(e, KeyEvent.VK_UP) || (e.isShiftDown() && keyEquals(e, KeyEvent.VK_TAB));
+    }
+
+    private boolean focusNextKeyStroke(KeyEvent e) {
+        return keyEquals(e, KeyEvent.VK_DOWN, KeyEvent.VK_TAB);
     }
 
     private void toggle() {
@@ -50,10 +59,6 @@ public class ConfigurationTreeKeyNavigationListener implements KeyListener {
         } else {
             RunConfigExecutor.executeRun(((JPanelSingleConfiguration) configuration).getExecutable());
         }
-    }
-
-    private boolean keyEquals(KeyEvent e, int... vkDown) {
-        return IntStream.of(vkDown).anyMatch(k -> e.getKeyCode() == k);
     }
 
     @Override

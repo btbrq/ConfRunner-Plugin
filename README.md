@@ -25,7 +25,7 @@ You can specify which configuration types should be excluded from the dialog
 * **Arrow Left** / **Arrow Right** / **Enter** - on folder / type - expand / collapse children
 * **Enter** - on specific configuration - execute in Run mode
 * **Ctrl + Enter** - on specific configuration - execute in Debug mode
-* **Ctrl + F** - go back to text lookup component
+* **Ctrl + F** / **IDEA Find Shortcuts** - go back to text lookup component
 
 ### Mouse actions:
 

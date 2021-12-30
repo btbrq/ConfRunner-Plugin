@@ -2,26 +2,20 @@ package brq.intellij.plugins.confrunner.ui;
 
 import brq.intellij.plugins.confrunner.common.constants.Constants;
 import brq.intellij.plugins.confrunner.domain.SingleRunConfiguration;
-import brq.intellij.plugins.confrunner.listeners.ConfigurationTreeKeyNavigationListener;
-import brq.intellij.plugins.confrunner.listeners.MouseClickListener;
-import brq.intellij.plugins.confrunner.listeners.FocusListener;
 import com.intellij.util.ui.JBUI;
 
 import javax.swing.*;
 import java.util.List;
 
+import static brq.intellij.plugins.confrunner.listeners.ListenerRegisterUtils.registerFolderTypeListeners;
 import static com.intellij.icons.AllIcons.Nodes.Folder;
 
 public class JPanelConfigurationFolderBox extends BaseConfigurationPanel implements JPanelChildrenToggle {
     private JPanelConfigurationFolderConfigurations configurations;
-    private JPanelConfigurationLabel label;
 
     private JPanelConfigurationFolderBox(JPanelConfigurationLabel label) {
-        super(label.getLabelText());
-        this.label = label;
-        label.addFocusListener(new FocusListener(label));
-        label.addMouseListener(new MouseClickListener(this, label));
-        label.addKeyListener(new ConfigurationTreeKeyNavigationListener(this));
+        super(label);
+        registerFolderTypeListeners(this, label);
         label.setBorder(JBUI.Borders.emptyLeft(Constants.iconWidth));
         add(label);
     }
@@ -37,9 +31,9 @@ public class JPanelConfigurationFolderBox extends BaseConfigurationPanel impleme
         if (configurations != null) {
             configurations.setVisible(!configurations.isVisible());
             if (configurations.isVisible()) {
-                label.toggleExpanded();
+                getLabel().toggleExpanded();
             } else {
-                label.toggleCollapsed();
+                getLabel().toggleCollapsed();
             }
         }
     }
