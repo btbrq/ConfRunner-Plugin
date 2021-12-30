@@ -5,7 +5,7 @@
     <description><![CDATA[
     ConfRunner Plugin is a plugin for JetBrains IntelliJ IDEA, that can be used to simplify execution of configurations in run and debug mode.
     <br><br>
-    Enables an easy way of executing configurations using keyboard shortcuts.
+    Enables an easy way of executing configurations using keyboard shortcuts. Press Enter (or Double Mouse Click) on specific configuration to execute it in Run mode. Press Ctrl+Enter (or Ctrl+Double Mouse Click) for Debug mode.
     <br><br>
     It displays simplified popup dialog with defined configurations and enables to go through configurations and execute a specific one. Open the dialog using either Tools tab (Tools > ConfRunner) or using a shortcut.
     <br><br>

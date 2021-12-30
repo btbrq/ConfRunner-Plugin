@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'brq.intellij.plugins'
-version '1.0'
+version '1.0.1'
 
 repositories {
     mavenCentral()
@@ -23,7 +23,9 @@ intellij {
 }
 
 patchPluginXml {
-    changeNotes = """"""
+    if (System.getenv("CHANGE_NOTES_PATH")) {
+        changeNotes = file(System.getenv("CHANGE_NOTES_PATH")).text
+    }
 }
 
 signPlugin {
